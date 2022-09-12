@@ -24,4 +24,20 @@ router.post('/', async (req, res) => {
     // create a new user
 })
 
+// GET /users/login -- show a login form to the user
+router.get('/login', (req, res) => {
+    res.render('users/login.ejs')
+})
+
+// POST /users/login -- accept a payload of form data and use it to log a user in
+router.post('/login', (req, res) => {
+    console.log(req.body)
+    res.send('log the user in')
+})
+
+//GET /users/logout -- log out a user by clearing the stored cookie
+router.get('/logout', (req, res) => {
+    res.send('log the user out')
+})
+
 module.exports = router
